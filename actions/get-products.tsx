@@ -11,7 +11,7 @@ interface Query {
 }
 
 const getProducts = async (query: Query): Promise<Product[]> => {
-  // Use qs.stringify to create the query string only
+  // Use qs.stringifyUrl to create the query string
   const url = qs.stringifyUrl({
     url: URL,
     query: {
@@ -22,13 +22,27 @@ const getProducts = async (query: Query): Promise<Product[]> => {
     },
   });
 
-  const res = await fetch(url);
+  try {
+    const res = await fetch(url);
 
-  if (!res.ok) {
-    throw new Error(`Failed to fetch products: ${res.statusText}`);
+    // Check if the response is okay
+    if (!res.ok) {
+      const text = await res.text(); // Read the response as text first
+      try {
+        const json = JSON.parse(text); // Try to parse it as JSON
+        throw new Error(json.message || "Failed to fetch products.");
+      } catch {
+        // If it fails to parse as JSON, throw an error with the text
+        throw new Error(`API Error: ${text}`);
+      }
+    }
+
+    return await res.json();
+  } catch (error) {
+    console.error("Error fetching products:", error);
+    // Return an empty array or handle the error as needed
+    return [];
   }
-
-  return res.json();
 };
 
 export default getProducts;

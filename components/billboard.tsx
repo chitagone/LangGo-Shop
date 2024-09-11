@@ -6,13 +6,13 @@ interface BillboardProp {
 
 const Billboard: React.FC<BillboardProp> = ({ data }) => {
   return (
-    <div className="p-4 sm:p-6 lg:p-8 rounded-xl overflow-hidden">
+    <div className="relative p-2 sm:p-4 lg:p-6 rounded-xl overflow-hidden transition-transform transform group h-48 sm:h-64 lg:h-80">
       <div
         style={{ backgroundImage: `url(${data?.imageUrl})` }}
-        className="rounded-xl relative aspect-square md:aspect-[2.4/1] overflow-hidden bg-cover"
+        className="rounded-xl absolute inset-0 bg-cover bg-center transition-transform duration-500"
       >
-        <div className="h-full w-full justify-center items-center text-center gap-y-8">
-          <div className="font-bold text-3xl sm:text-5xl lg:text-6xl sm:max-w-xl max-w-xs">
+        <div className="absolute inset-0 bg-black/40 flex justify-center items-center text-center transition-opacity duration-300 group-hover:opacity-100 opacity-0">
+          <div className="text-white font-bold text-xl sm:text-2xl lg:text-3xl p-2 sm:p-4 lg:p-6 shadow-lg max-w-xs sm:max-w-md">
             {data.label}
           </div>
         </div>
