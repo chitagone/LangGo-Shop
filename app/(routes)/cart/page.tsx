@@ -2,7 +2,7 @@
 
 import Container from "@/components/ui/container";
 import useCart from "@/hook/use-cart-";
-import { useEffect, useState } from "react";
+
 import CartItem from "./components/cart-items";
 import Summary from "./components/summary";
 
