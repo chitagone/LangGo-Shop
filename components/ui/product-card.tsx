@@ -7,6 +7,7 @@ import { Expand, ShoppingCart } from "lucide-react";
 import Currency from "./currency";
 import { useRouter } from "next/navigation";
 import usePreviewModal from "@/hook/use-preview-modal";
+import useCart from "@/hook/use-cart-";
 
 interface ProductCardProps {
   data: Product;
@@ -18,11 +19,17 @@ const ProductCard: React.FC<ProductCardProps> = ({ data }) => {
   };
 
   const previewModal = usePreviewModal();
+  const cart = useCart();
 
   const onPreview: MouseEventHandler<HTMLButtonElement> = (event) => {
     event.stopPropagation();
     previewModal.onOpen(data);
   };
+  const onAddtoCart: MouseEventHandler<HTMLButtonElement> = (event) => {
+    event.stopPropagation();
+    cart.addItem(data);
+  };
+
   return (
     <div
       className="bg-white group cursor-pointer rounded-xl border p-3 space-y-4"
@@ -43,7 +50,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ data }) => {
               icon={<Expand size={20} className="text-gray-600" />}
             />
             <IconButton
-              onclick={() => {}}
+              onclick={onAddtoCart}
               icon={<ShoppingCart size={20} className="text-gray-600" />}
             />
           </div>
@@ -51,7 +58,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ data }) => {
       </div>
       {/*Description */}
       <div>
-        <p className="font-semibold text-lg">{data.name}</p>
+        <p className="font-semibold text-lg">{data?.name}</p>
         <p className="text-sm text-gray-500">{data.category?.name}</p>
       </div>
 
