@@ -1,6 +1,7 @@
 import getBillboard from "@/actions/get-billboard";
 import getProducts from "@/actions/get-products";
 import Billboard from "@/components/billboard";
+
 import ProductList from "@/components/products-list";
 import Container from "@/components/ui/container";
 import { SearchBar } from "@/components/ui/search-bar";
