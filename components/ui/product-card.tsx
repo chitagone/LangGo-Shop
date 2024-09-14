@@ -2,7 +2,7 @@
 import Image from "next/image";
 import React, { MouseEventHandler } from "react";
 import IconButton from "./icon-button";
-import { Expand, Heart, ShoppingCart, HeartCrack } from "lucide-react"; // Import filled heart icon
+import { Expand, Heart, ShoppingCart } from "lucide-react"; // Import filled heart icon
 import Currency from "./currency";
 import { useRouter } from "next/navigation";
 import usePreviewModal from "@/hook/use-preview-modal";

@@ -37,14 +37,14 @@ const Modal: React.FC<ModalProps> = ({ open, onClose, children }) => {
             leaveFrom="opacity-100 scale-100"
             leaveTo="opacity-0 scale-95"
           >
-            <DialogPanel className="relative w-full max-w-sm sm:max-w-md md:max-w-lg mx-auto overflow-hidden rounded-lg bg-white text-left shadow-lg ring-1 ring-gray-900/10">
+            <DialogPanel className="relative w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-2xl mx-auto overflow-hidden rounded-lg bg-white text-left shadow-lg ring-1 ring-gray-900/10">
               {/* Close Button */}
               <div className="absolute top-4 right-4 z-30">
                 <IconButton onclick={onClose} icon={<X size={20} />} />
               </div>
 
               {/* Modal Body */}
-              <div className="p-4 sm:p-6">{children}</div>
+              <div className="p-4 sm:p-6 lg:p-8">{children}</div>
             </DialogPanel>
           </TransitionChild>
         </div>
