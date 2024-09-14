@@ -12,6 +12,11 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        sans: ["Poppins", "sans-serif"],
+        cursive: ["Pacifico", "Sriracha", "cursive"],
+        cursive2: ["Sriracha", "cursive"],
+      },
     },
   },
   plugins: [],

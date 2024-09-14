@@ -2,7 +2,7 @@
 import axios from "axios";
 import { useEffect } from "react";
 import { useSearchParams } from "next/navigation";
-import Button from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import Currency from "@/components/ui/currency";
 
 import useCart from "@/hook/use-cart-";
