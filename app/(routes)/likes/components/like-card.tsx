@@ -3,18 +3,18 @@ import Image from "next/image";
 import { X } from "lucide-react";
 import IconButton from "@/components/ui/icon-button";
 import Currency from "@/components/ui/currency";
-import useCart from "@/hook/use-cart-";
+import useLike from "@/hook/use-like";
 import { Product } from "@/types";
 
-interface CartItemProp {
+interface LikeItemProp {
   data: Product;
 }
 
-const CartItem: React.FC<CartItemProp> = ({ data }) => {
-  const cart = useCart();
+const LikeItem: React.FC<LikeItemProp> = ({ data }) => {
+  const { likedItems, toggleLike } = useLike(); // Destructure toggleLike from useLike hook
 
   const onRemove = () => {
-    cart.removeItem(data.id);
+    toggleLike(data); // Toggle the like status of the item
   };
 
   return (
@@ -35,26 +35,17 @@ const CartItem: React.FC<CartItemProp> = ({ data }) => {
           <div className="flex justify-between">
             <p className="text-lg font-semibold text-black">{data?.name}</p>
           </div>
-          <div className="mt-1 flex items-center text-sm">
-            <div className=" flex justify-center">
-              <div
-                style={{ backgroundColor: data.color.value }}
-                className="h-6 w-6 rounded-full border border-gray-300 mr-2"
-              />
-              <p className="text-gray-500">{data?.color?.name}</p>
-            </div>
-
+          <div className="mt-1 flex text-sm">
+            <p className="text-gray-500">{data?.color?.name}</p>
             <p className="text-gray-500 ml-4 border-l border-gray-200 pl-4">
-              {data?.size?.value}
+              {data?.size?.name}
             </p>
           </div>
-          <div className="mt-2 text-green-400 font-mono">
-            <Currency value={data?.price} />
-          </div>
+          <Currency value={data?.price} />
         </div>
       </div>
     </li>
   );
 };
 
-export default CartItem;
+export default LikeItem;
