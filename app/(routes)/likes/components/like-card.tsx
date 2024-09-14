@@ -11,7 +11,7 @@ interface LikeItemProp {
 }
 
 const LikeItem: React.FC<LikeItemProp> = ({ data }) => {
-  const { likedItems, toggleLike } = useLike(); // Destructure toggleLike from useLike hook
+  const { toggleLike } = useLike(); // Destructure toggleLike from useLike hook
 
   const onRemove = () => {
     toggleLike(data); // Toggle the like status of the item

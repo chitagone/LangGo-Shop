@@ -1,15 +1,12 @@
 "use client";
 import { Billboard as BillboardType } from "@/types";
 import { Button } from "./ui/button";
-import { useRouter } from "next/navigation";
 
 interface BillboardProp {
   data: BillboardType;
 }
 
 const Billboard: React.FC<BillboardProp> = ({ data }) => {
-  const router = useRouter();
-
   return (
     <div className="relative p-2 sm:p-4 lg:p-6 rounded-xl overflow-hidden transition-transform transform group h-48 sm:h-64 lg:h-80 mx-6 my-4">
       <div

@@ -3,7 +3,7 @@
 import { Suspense } from "react";
 import Container from "@/components/ui/container";
 import useLike from "@/hook/use-like";
-import LikeItem from "./components/like-card";
+
 import ProductList from "@/components/products-list";
 
 const FavoriteContent = () => {
