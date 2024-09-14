@@ -10,9 +10,6 @@ interface BillboardProp {
 const Billboard: React.FC<BillboardProp> = ({ data }) => {
   const router = useRouter();
 
-  const handleClick = () => {
-    router.push(`/category/b6b9ae29-3e53-4f20-a92a-190bec6c08fe`);
-  };
   return (
     <div className="relative p-2 sm:p-4 lg:p-6 rounded-xl overflow-hidden transition-transform transform group h-48 sm:h-64 lg:h-80 mx-6 my-4">
       <div
@@ -27,7 +24,6 @@ const Billboard: React.FC<BillboardProp> = ({ data }) => {
             <Button
               variant="secondary"
               className="bg-gradient-to-r from-orange-300 to-red-400 text-white rounded-full px-6 py-3 transition-transform transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 shadow-lg"
-              onClick={handleClick}
             >
               <p className="font-cursive2 text-lg">Order Now!</p>
             </Button>

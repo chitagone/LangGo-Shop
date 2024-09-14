@@ -53,7 +53,7 @@ const Summary = () => {
       </div>
       <Button
         disabled={items.length === 0}
-        className="w-full mt-6"
+        className="w-full mt-6 bg-orange-400 text-white font-bold"
         onClick={onCheckOut}
       >
         Check Out

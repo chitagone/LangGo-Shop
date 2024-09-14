@@ -9,7 +9,7 @@ const NavFooter = () => {
   // Define the links for each navigation item
   const links = [
     { href: "/", label: "Home", icon: Home },
-    { href: "/liked", label: "Liked", icon: Heart },
+    { href: "/likes", label: "Liked", icon: Heart },
     { href: "/cart", label: "Orders", icon: ShoppingCart },
     { href: "/user", label: "Users", icon: User },
   ];
