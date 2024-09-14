@@ -48,6 +48,7 @@ const CateGoryPage: React.FC<CateGoryPageProps> = async ({
               <Filter valueKey="sizeId" name="Sizes" data={sizes} />
               <Filter valueKey="colorId" name="Colors" data={color} />
             </div>
+
             <div className="mt-6 lg:col-span-4 lg:mt-0">
               {products.length === 0 && <NoResult />}
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">

@@ -21,8 +21,9 @@ const Navbar = async () => {
             <h3 className="text-3xl font-cursive -ml-8">Chittagone</h3>
           </Link>
 
-          {/* Navbar Actions */}
-          <NavbarActions />
+          <div className="mr-3">
+            <NavbarActions />
+          </div>
         </div>
       </Container>
     </div>

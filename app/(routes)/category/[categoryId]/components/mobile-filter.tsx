@@ -4,7 +4,7 @@ import IconButton from "@/components/ui/icon-button";
 
 import { Color, Size } from "@/types";
 import { Dialog, DialogPanel } from "@headlessui/react";
-import { Plus, X } from "lucide-react";
+import { ListFilter, Plus, X } from "lucide-react";
 import { useState } from "react";
 import Filter from "./filter";
 interface MobileFilterProps {
@@ -20,8 +20,7 @@ const MobileFilter: React.FC<MobileFilterProps> = ({ sizes, colors }) => {
   return (
     <>
       <Button className="flex items-center gap-x-2 lg:hidden" onClick={onOpen}>
-        Filter
-        <Plus size={20} />
+        <ListFilter size={20} />
       </Button>
       <Dialog
         open={open}
